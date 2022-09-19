@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BUTTON_CLEANUP" xml:space="preserve">
+    <value>Очищення</value>
+  </data>
+  <data name="BUTTON_CLOSE" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="BUTTON_FORWARD" xml:space="preserve">
+    <value>Вперед</value>
+  </data>
+  <data name="BUTTON_NEXT" xml:space="preserve">
+    <value>Далі</value>
+  </data>
+  <data name="BUTTON_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BUTTON_UPDATE" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="BUTTON_X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="DESCRIPTION_TEXT" xml:space="preserve">
+    <value>Цей інсталятор встановить патч FIFA Manager {0} у директорію FIFA Manager.</value>
+  </data>
+  <data name="DESCRIPTION_TEXT_UPDATE" xml:space="preserve">
+    <value>Цей інсталятор встановить патч FIFA Manager {0} (Оновлення {1}) у директорію FIFA Manager.</value>
+  </data>
+  <data name="ERROR_CONFIG" xml:space="preserve">
+    <value>Наявні помилки у форматі конфігураційного файлу</value>
+  </data>
+  <data name="ERROR_MISSING_FILE" xml:space="preserve">
+    <value>Відсутній файл:</value>
+  </data>
+  <data name="ERROR_MISSING_FILES" xml:space="preserve">
+    <value>Відсутні файли:</value>
+  </data>
+  <data name="INSTALL_ABORT" xml:space="preserve">
+    <value>Перервати встановлення? Усі (вже зроблені) зміни не будуть скасовані.</value>
+  </data>
+  <data name="INSTALL_CLOSE" xml:space="preserve">
+    <value>Натисніть зелену кнопку "OK", щоб вийти зі встановлення.</value>
+  </data>
+  <data name="INSTALL_ERROR" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="INSTALL_ERROR_CLOSE" xml:space="preserve">
+    <value>При встановленні сталася помилка. Натисніть сіру кнопку «X», щоб закрити програму встановлення.</value>
+  </data>
+  <data name="INSTALL_FINISHED" xml:space="preserve">
+    <value>Встановлення завершено.</value>
+  </data>
+  <data name="INSTALL_NO_SPACE" xml:space="preserve">
+    <value>Не вистачає місця для встановлення. Будь ласка, очистіть місце та натисніть кнопку "Оновити". Якщо потрібно змінити папку призначення, закрийте інсталятор і знову запустіть його. Для примусового встановлення натисніть червону кнопку "Вперед".</value>
+  </data>
+  <data name="INSTALL_PROGRESS" xml:space="preserve">
+    <value>Встановлення почалося. Прогрес встановлення:</value>
+  </data>
+  <data name="INSTALLDIR_ACTION" xml:space="preserve">
+    <value>Оберіть тип встановлення:</value>
+  </data>
+  <data name="INSTALLDIR_BROWSE" xml:space="preserve">
+    <value>Огляд...</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_DOES_NOT_MATCH" xml:space="preserve">
+    <value>Ви не можете встановити оновлення патча, оскільки встановлена конфігурація патча не збігається з доступними файлами інсталятора. Ви все ще можете повторно встановити патч із новою конфігурацією.</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_MAKE_SURE" xml:space="preserve">
+    <value>Якщо ви хочете встановити оновлення для поточної конфігурації патча, переконайтеся, що ці файли доступні:</value>
+  </data>
+  <data name="INSTALLDIR_ERROR" xml:space="preserve">
+    <value>Помилка: Обрана директорія не є директорією FIFA Manager. Перевірте уважно: у директорії FIFA Manager розташований файл "GfxCore.dll", папка "fmdata", а також інші файли та папки.</value>
+  </data>
+  <data name="INSTALLDIR_HEADER" xml:space="preserve">
+    <value>Оберіть папку FIFA Manager:</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL" xml:space="preserve">
+    <value>Встановити патч</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATE" xml:space="preserve">
+    <value>Встановити Оновлення {0}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATES" xml:space="preserve">
+    <value>Встановити Оновлення {0} та {1}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Встановити патч з усіма оновленнями</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES" xml:space="preserve">
+    <value>Ви не можете встановити патч, тому що відсутні такі файли:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL" xml:space="preserve">
+    <value>Ви не можете перевстановити патч за допомогою цього інсталятора, тому що відсутні такі файли:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL_BUT" xml:space="preserve">
+    <value>Але ви не можете перевстановити патч, оскільки відсутні ці файли:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_UPDATES" xml:space="preserve">
+    <value>Ви не можете встановити оновлення патча, тому що відсутні такі файли:</value>
+  </data>
+  <data name="INSTALLDIR_NOTE" xml:space="preserve">
+    <value>Важливо: Рекомендується встановлювати патч на чисту версію гри. Інсталятор може видаляти деякі файли та папки у вибраній директорії встановлення.</value>
+  </data>
+  <data name="INSTALLDIR_READY" xml:space="preserve">
+    <value>Все готове для початку встановлення.</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL" xml:space="preserve">
+    <value>Перевстановити патч</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATE" xml:space="preserve">
+    <value>Перевстановити Оновлення {0}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATES" xml:space="preserve">
+    <value>Перевстановити Оновлення {0} та {1}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Перевстановити патч з усіма оновленнями</value>
+  </data>
+  <data name="INSTALLDIR_START" xml:space="preserve">
+    <value>Натисніть зелену кнопку "OK", щоб розпочати встановлення.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL" xml:space="preserve">
+    <value>У вас є можливість перевстановити патч.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATE" xml:space="preserve">
+    <value>Ви все ще маєте можливість перевстановити Оновлення {0}.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATES" xml:space="preserve">
+    <value>Ви все ще маєте можливість перевстановити Оновлення {0} та {1}.</value>
+  </data>
+  <data name="INSTALLDIR_UPDATE" xml:space="preserve">
+    <value>Оновлення {0}</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_CURRENT" xml:space="preserve">
+    <value>Поточна версія - FIFA Manager {0}.{1}.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_GREATER" xml:space="preserve">
+    <value>Поточна встановлена ​​версія ({0}.{1}) більша за версію інсталятора ({0}.{2}). Можливо, ви використовуєте застарілу версію інсталятора. За допомогою цього інсталятора ви можете оновити версію патча до {0}.{2}, лише перевстановивши патч.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_NOT_INSTALLED" xml:space="preserve">
+    <value>Патч (FIFA Manager {0}) ще не було встановлено на цій грі.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_SAME" xml:space="preserve">
+    <value>Ви вже встановили патч версії {0}.{1} (та сама версія, що й інсталятор).</value>
+  </data>
+  <data name="INSTALLOPTION_3D_BANNERPACK" xml:space="preserve">
+    <value>Пак 3D банерів</value>
+  </data>
+  <data name="INSTALLOPTION_3D_FACEPACK" xml:space="preserve">
+    <value>Пак 3D облич</value>
+  </data>
+  <data name="INSTALLOPTION_3D_KITPACK" xml:space="preserve">
+    <value>Пак 3D форм</value>
+  </data>
+  <data name="INSTALLOPTION_3D_STADPACK" xml:space="preserve">
+    <value>Пак 3D стадіонів</value>
+  </data>
+  <data name="INSTALLOPTION_AVAILABLE_SPACE" xml:space="preserve">
+    <value>Доступно:</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES" xml:space="preserve">
+    <value>Оберіть стиль логотипів</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1" xml:space="preserve">
+    <value>Чистий</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO1" xml:space="preserve">
+    <value>{0} логотипів</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2" xml:space="preserve">
+    <value>Градієнт та Обведення</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO1" xml:space="preserve">
+    <value>{0} логотипів</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_CB" xml:space="preserve">
+    <value>Стиль логотипів</value>
+  </data>
+  <data name="INSTALLOPTION_CLEANUP_TIP" xml:space="preserve">
+    <value>Видалити непотрібні файли в папці з грою та в Документах перед встановленням</value>
+  </data>
+  <data name="INSTALLOPTION_FINAL" xml:space="preserve">
+    <value>Фінальна конфігурація</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE" xml:space="preserve">
+    <value>Мова гри</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE_TIP" xml:space="preserve">
+    <value>Мову можна змінити пізніше, за допомогою інструмента "Language Selector" (доступний у папці з грою)</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS" xml:space="preserve">
+    <value>Оберіть стиль портретів</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1" xml:space="preserve">
+    <value>Стиль Football Manager</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO1" xml:space="preserve">
+    <value>{0} портретів</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO2" xml:space="preserve">
+    <value>автор - sortitoutsi.net</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2" xml:space="preserve">
+    <value>Стиль FIFA Manager</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO1" xml:space="preserve">
+    <value>{0} портретів</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_CB" xml:space="preserve">
+    <value>Стиль портретів</value>
+  </data>
+  <data name="INSTALLOPTION_REFRESH_TIP" xml:space="preserve">
+    <value>Перерахунок доступного місця</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_GRAPHICS" xml:space="preserve">
+    <value>Видалити графіку в Документах</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_SAVEGAMES" xml:space="preserve">
+    <value>Видалити збереження в Документах</value>
+  </data>
+  <data name="INSTALLOPTION_REQUIRED_SPACE" xml:space="preserve">
+    <value>Необхідне місце для встановлення:</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT" xml:space="preserve">
+    <value>Вибрати стиль</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT_THEME" xml:space="preserve">
+    <value>Вибрати тему</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_1" xml:space="preserve">
+    <value>Без стадіонів</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_2" xml:space="preserve">
+    <value>Базовий ({0} стад.)</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_3" xml:space="preserve">
+    <value>Повний ({0} стад.)</value>
+  </data>
+  <data name="INSTALLOPTION_THEME" xml:space="preserve">
+    <value>Оберіть тему</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
+    <value>Світла (Стандартна)</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
+    <value>Темна</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_NOTE" xml:space="preserve">
+    <value>Тему можна також змінити в опціях гри</value>
+  </data>
+  <data name="INSTALLOPTION_XXL_PORTRAITS" xml:space="preserve">
+    <value>Портрети XXL</value>
+  </data>
+  <data name="LICENSE_ACCEPT" xml:space="preserve">
+    <value>Я погоджуюсь з умовами ліцензійної угоди</value>
+  </data>
+  <data name="LICENSE_HEADER" xml:space="preserve">
+    <value>Прочитайте ліцензійну угоду.</value>
+  </data>
+  <data name="LICENSE_TEXT" xml:space="preserve">
+    <value>Це модифікація (патч) для гри FIFA Manager (створеної EA Sports).
+
+Цей патч створений на ентузіазмі невеликої команди фанатів серії гри FIFA Manager і не передбачає комерційного використання.
+
+Розповсюдження цього патча на інших веб-ресурсах можливе лише у випадку використання оригінальних файлів патча, і лише під оригінальною назвою патча.
+
+ЦЕ ПРОГРАМНЕ ЗАБЕЗПЕЧЕННЯ/МОДИФІКАЦІЯ НАДАЄТЬСЯ «ЯК Є», БЕЗ БУДЬ-ЯКИХ ГАРАНТІЙ.</value>
+  </data>
+  <data name="NEXT_INSTALLOPTIONS" xml:space="preserve">
+    <value>Натисніть зелену кнопку "Далі", щоб перейти до параметрів встановлення.</value>
+  </data>
+</root>

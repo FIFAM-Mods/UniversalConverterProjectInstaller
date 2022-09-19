@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DESCRIPTION_TEXT" xml:space="preserve">
+    <value>This installer will install FIFA Manager {0} Patch to your FIFA Manager.</value>
+  </data>
+  <data name="INSTALLDIR_BROWSE" xml:space="preserve">
+    <value>Browse...</value>
+  </data>
+  <data name="INSTALLDIR_ERROR" xml:space="preserve">
+    <value>Error: Not a FIFA Manager directory. Please check carefully: there must be "GfxCore.dll" file and "fmdata" folder, among with other files and folders, in FIFA Manager directory.</value>
+  </data>
+  <data name="INSTALLDIR_HEADER" xml:space="preserve">
+    <value>Please choose FIFA Manager folder:</value>
+  </data>
+  <data name="INSTALLDIR_NOTE" xml:space="preserve">
+    <value>Note: It's recommended to install this patch on a fresh clean game. The installer may remove (delete) some files and folders inside selected installation folder.</value>
+  </data>
+  <data name="INSTALLDIR_READY" xml:space="preserve">
+    <value>Everything is ready for the install.</value>
+  </data>
+  <data name="INSTALL_ABORT" xml:space="preserve">
+    <value>Are you sure you want to abort the installation? All applied changes won't be reverted.</value>
+  </data>
+  <data name="INSTALL_CLOSE" xml:space="preserve">
+    <value>Press the green "OK" button to close the installer.</value>
+  </data>
+  <data name="INSTALL_ERROR" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="INSTALL_FINISHED" xml:space="preserve">
+    <value>Installation completed.</value>
+  </data>
+  <data name="INSTALL_PROGRESS" xml:space="preserve">
+    <value>Installation is started. Installation progress:</value>
+  </data>
+  <data name="LICENSE_ACCEPT" xml:space="preserve">
+    <value>I accept the license agreement</value>
+  </data>
+  <data name="LICENSE_HEADER" xml:space="preserve">
+    <value>Please read the license agreement.</value>
+  </data>
+  <data name="LICENSE_TEXT" xml:space="preserve">
+    <value>This is a modification (patch) for a FIFA Manager game (created by EA Sports).
+
+This patch was created solely on enthusiasm from a team of FIFA Manager series fans, and does not involve any commercial use.
+
+The distribution of this patch on any other web resources is possible only with the use of original patch files (including this installer) and only under the original patch name.
+
+THIS SOFTWARE/MODIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</value>
+  </data>
+  <data name="INSTALLDIR_ACTION" xml:space="preserve">
+    <value>Please choose installation type:</value>
+  </data>
+  <data name="INSTALLDIR_START" xml:space="preserve">
+    <value>Press the green "OK" button to start the installation.</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES" xml:space="preserve">
+    <value>Please select badges style</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1" xml:space="preserve">
+    <value>Clean Style</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO1" xml:space="preserve">
+    <value>{0} badges</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2" xml:space="preserve">
+    <value>Shine and Outline Style</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO1" xml:space="preserve">
+    <value>{0} badges</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS" xml:space="preserve">
+    <value>Please select portraits style</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1" xml:space="preserve">
+    <value>Football Manager Style</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO1" xml:space="preserve">
+    <value>{0} portraits</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2" xml:space="preserve">
+    <value>FIFA Manager Style</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO1" xml:space="preserve">
+    <value>{0} portraits</value>
+  </data>
+  <data name="NEXT_INSTALLOPTIONS" xml:space="preserve">
+    <value>Press the green "Forward" button to go to installation options.</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO2" xml:space="preserve">
+    <value>fm-zocker.de production</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO2" xml:space="preserve">
+    <value>fm-zocker.de production</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO2" xml:space="preserve">
+    <value>sortitoutsi.net production</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO2" xml:space="preserve">
+    <value>fm-zocker.de production</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT" xml:space="preserve">
+    <value>Select style</value>
+  </data>
+  <data name="INSTALLOPTION_3D_FACEPACK" xml:space="preserve">
+    <value>3D Faces pack</value>
+  </data>
+  <data name="INSTALLOPTION_3D_STADPACK" xml:space="preserve">
+    <value>3D Stadiums pack</value>
+  </data>
+  <data name="INSTALLOPTION_AVAILABLE_SPACE" xml:space="preserve">
+    <value>Available space:</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_CB" xml:space="preserve">
+    <value>Badges style</value>
+  </data>
+  <data name="INSTALLOPTION_FINAL" xml:space="preserve">
+    <value>Final configuration</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_CB" xml:space="preserve">
+    <value>Portraits style</value>
+  </data>
+  <data name="INSTALLOPTION_REQUIRED_SPACE" xml:space="preserve">
+    <value>Required space for installation:</value>
+  </data>
+  <data name="INSTALLOPTION_3D_KITPACK" xml:space="preserve">
+    <value>3D Kits pack</value>
+  </data>
+  <data name="BUTTON_CLOSE" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="BUTTON_FORWARD" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="BUTTON_NEXT" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="BUTTON_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BUTTON_UPDATE" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="BUTTON_X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="INSTALL_ERROR_CLOSE" xml:space="preserve">
+    <value>There was an error during the installation. Press the grey "X" button to close the installer.</value>
+  </data>
+  <data name="INSTALL_NO_SPACE" xml:space="preserve">
+    <value>There's no enough space for installation. Please, clean the space and press the "Refresh" button. If you want to change the destination folder, please close the installer and run it again. To force the installation, press the red "Forward" button.</value>
+  </data>
+  <data name="BUTTON_CLEANUP" xml:space="preserve">
+    <value>Cleanup</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_GRAPHICS" xml:space="preserve">
+    <value>Remove Graphics from Documents folder</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_SAVEGAMES" xml:space="preserve">
+    <value>Remove SaveGames from Documents folder</value>
+  </data>
+  <data name="INSTALLOPTION_CLEANUP_TIP" xml:space="preserve">
+    <value>Remove unneded files in game and Documents folder before the installation</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE" xml:space="preserve">
+    <value>Game Language</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE_TIP" xml:space="preserve">
+    <value>You can change the language later, with "Language Selector" tool (available in game folder)</value>
+  </data>
+  <data name="INSTALLOPTION_REFRESH_TIP" xml:space="preserve">
+    <value>Recalculate available space</value>
+  </data>
+  <data name="INSTALLOPTION_3D_BANNERPACK" xml:space="preserve">
+    <value>3D Banners pack</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT_THEME" xml:space="preserve">
+    <value>Select theme</value>
+  </data>
+  <data name="INSTALLOPTION_THEME" xml:space="preserve">
+    <value>Please select theme</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
+    <value>Light (Default)</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_NOTE" xml:space="preserve">
+    <value>You can change the theme in Game options when you want</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_1" xml:space="preserve">
+    <value>No stadiums</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_2" xml:space="preserve">
+    <value>Basic ({0} stadiums)</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_3" xml:space="preserve">
+    <value>Full ({0} stadiums)</value>
+  </data>
+  <data name="INSTALLOPTION_XXL_PORTRAITS" xml:space="preserve">
+    <value>XXL Portraits</value>
+  </data>
+  <data name="DESCRIPTION_TEXT_UPDATE" xml:space="preserve">
+    <value>This installer will install FIFA Manager {0} Patch (Update {1}) to your FIFA Manager.</value>
+  </data>
+  <data name="ERROR_CONFIG" xml:space="preserve">
+    <value>There are errors in config file format</value>
+  </data>
+  <data name="ERROR_MISSING_FILE" xml:space="preserve">
+    <value>Missing file:</value>
+  </data>
+  <data name="ERROR_MISSING_FILES" xml:space="preserve">
+    <value>Missing files:</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_DOES_NOT_MATCH" xml:space="preserve">
+    <value>You can't install patch updates because the installed patch configuration does not match with available installer files. You still have option to reinstall the patch with new configuration.</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_MAKE_SURE" xml:space="preserve">
+    <value>If you want to install updates for current patch configuration, make sure these files are available:</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL" xml:space="preserve">
+    <value>Install patch</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATE" xml:space="preserve">
+    <value>Install Update {0}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATES" xml:space="preserve">
+    <value>Install Updates {0} and {1}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Install patch with all updates</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES" xml:space="preserve">
+    <value>You can't install the patch because these files are missing:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL" xml:space="preserve">
+    <value>You can't reinstall the patch with this installer because these files are missing:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL_BUT" xml:space="preserve">
+    <value>But you can't reinstall the patch because these files are missing:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_UPDATES" xml:space="preserve">
+    <value>You can't install patch updates because these files are missing:</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL" xml:space="preserve">
+    <value>Reinstall patch</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATE" xml:space="preserve">
+    <value>Reinstall Update {0}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATES" xml:space="preserve">
+    <value>Reinstall Updates {0} and {1}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Reinstall patch with all updates</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL" xml:space="preserve">
+    <value>You still have option to reinstall the patch.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATE" xml:space="preserve">
+    <value>You still have option to reinstall Update {0}.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATES" xml:space="preserve">
+    <value>You still have option to reinstall Updates {0} and {1}.</value>
+  </data>
+  <data name="INSTALLDIR_UPDATE" xml:space="preserve">
+    <value>Update {0}</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_CURRENT" xml:space="preserve">
+    <value>Currently installed version is FIFA Manager {0}.{1}.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_GREATER" xml:space="preserve">
+    <value>Currently installed version ({0}.{1}) is greater than installer version ({0}.{2}). It could be that you are using an outdated installer version. With this installer, you can only update the patch version to {0}.{2} by reinstalling the patch.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_NOT_INSTALLED" xml:space="preserve">
+    <value>The patch (FIFA Manager {0}) was not yet installed on this game.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_SAME" xml:space="preserve">
+    <value>You have already installed patch version {0}.{1} (the same with installer version).</value>
+  </data>
+</root>

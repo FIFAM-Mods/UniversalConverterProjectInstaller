@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="INSTALL_ERROR" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="DESCRIPTION_TEXT" xml:space="preserve">
+    <value>Этот установщик установит патч FIFA Manager {0} в директорию FIFA Manager.</value>
+  </data>
+  <data name="INSTALLDIR_BROWSE" xml:space="preserve">
+    <value>Обзор...</value>
+  </data>
+  <data name="INSTALLDIR_ERROR" xml:space="preserve">
+    <value>Ошибка: Выбранная директория не является директорией игры FIFA Manager. Проверьте внимательно: в директории FIFA Manager расположен файл "GfxCore.dll", папка "fmdata", а также другие файлы и папки.</value>
+  </data>
+  <data name="INSTALLDIR_HEADER" xml:space="preserve">
+    <value>Выберите папку FIFA Manager:</value>
+  </data>
+  <data name="INSTALLDIR_NOTE" xml:space="preserve">
+    <value>Важно: Рекомендуется устанавливать патч на "чистую" версию игры. Установщик может удалять некоторые файлы и папки в выбранной директории утсановки.</value>
+  </data>
+  <data name="INSTALLDIR_READY" xml:space="preserve">
+    <value>Всё готово для начала установки.</value>
+  </data>
+  <data name="INSTALL_ABORT" xml:space="preserve">
+    <value>Прервать установку? Все (уже сделанные) изменения не будут отменены.</value>
+  </data>
+  <data name="INSTALL_CLOSE" xml:space="preserve">
+    <value>Нажмите зелёную кнопку "OK", чтобы выйти из установки.</value>
+  </data>
+  <data name="INSTALL_FINISHED" xml:space="preserve">
+    <value>Установка завершена.</value>
+  </data>
+  <data name="INSTALL_PROGRESS" xml:space="preserve">
+    <value>Установка началась. Прогресс установки:</value>
+  </data>
+  <data name="LICENSE_ACCEPT" xml:space="preserve">
+    <value>Я согласен с условиями лицензионного соглашения</value>
+  </data>
+  <data name="LICENSE_HEADER" xml:space="preserve">
+    <value>Прочтите лицензионное соглашение.</value>
+  </data>
+  <data name="LICENSE_TEXT" xml:space="preserve">
+    <value>Это модификация (патч) для игры FIFA Manager (созданной EA Sports).
+
+Этот патч создан на энтузиазме небольшой команды фанатов серии игры FIFA Manager, и не предусматривает коммерческого использования.
+
+Распостранение этого патча на других веб-ресурсах возможно только в случае использования оригинальных файлов патча, и только под оригинальным названием патча.
+
+ДАННОЕ ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ/МОДИФИКАЦИЯ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ.</value>
+  </data>
+  <data name="INSTALLDIR_ACTION" xml:space="preserve">
+    <value>Выберите тип установки:</value>
+  </data>
+  <data name="INSTALLDIR_START" xml:space="preserve">
+    <value>Нажмите зелёную кнопку "OK", чтобы начать установку.</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES" xml:space="preserve">
+    <value>Выберите стиль логотипов</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1" xml:space="preserve">
+    <value>Чистый</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO1" xml:space="preserve">
+    <value>{0} логотипов</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2" xml:space="preserve">
+    <value>Градиент и Обводка</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO1" xml:space="preserve">
+    <value>{0} логотипов</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS" xml:space="preserve">
+    <value>Выберите стиль портретов</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1" xml:space="preserve">
+    <value>Стиль Football Manager</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO1" xml:space="preserve">
+    <value>{0} портретов</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2" xml:space="preserve">
+    <value>Стиль FIFA Manager</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO1" xml:space="preserve">
+    <value>{0} портретов</value>
+  </data>
+  <data name="NEXT_INSTALLOPTIONS" xml:space="preserve">
+    <value>Нажмите зелёную кнопку "Далее", чтобы перейти к параметрам установки.</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_1_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_2_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_1_INFO2" xml:space="preserve">
+    <value>автор - sortitoutsi.net</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_2_INFO2" xml:space="preserve">
+    <value>автор - fm-zocker.de</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT" xml:space="preserve">
+    <value>Выбрать стиль</value>
+  </data>
+  <data name="INSTALLOPTION_3D_FACEPACK" xml:space="preserve">
+    <value>Пак 3D лиц</value>
+  </data>
+  <data name="INSTALLOPTION_3D_STADPACK" xml:space="preserve">
+    <value>Пак 3D стадионов</value>
+  </data>
+  <data name="INSTALLOPTION_AVAILABLE_SPACE" xml:space="preserve">
+    <value>Доступно:</value>
+  </data>
+  <data name="INSTALLOPTION_BADGES_CB" xml:space="preserve">
+    <value>Стиль логотипов</value>
+  </data>
+  <data name="INSTALLOPTION_FINAL" xml:space="preserve">
+    <value>Финальная конфигурация</value>
+  </data>
+  <data name="INSTALLOPTION_PORTRAITS_CB" xml:space="preserve">
+    <value>Стиль портретов</value>
+  </data>
+  <data name="INSTALLOPTION_REQUIRED_SPACE" xml:space="preserve">
+    <value>Требуемое место для установки:</value>
+  </data>
+  <data name="INSTALLOPTION_3D_KITPACK" xml:space="preserve">
+    <value>Пак 3D форм</value>
+  </data>
+  <data name="BUTTON_CLOSE" xml:space="preserve">
+    <value>Закрыть</value>
+  </data>
+  <data name="BUTTON_FORWARD" xml:space="preserve">
+    <value>Вперёд</value>
+  </data>
+  <data name="BUTTON_NEXT" xml:space="preserve">
+    <value>Далее</value>
+  </data>
+  <data name="BUTTON_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="BUTTON_UPDATE" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="BUTTON_X" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="INSTALL_ERROR_CLOSE" xml:space="preserve">
+    <value>При установке произошла ошибка. Нажмите серую кнопку «X», чтобы закрыть программу установки.</value>
+  </data>
+  <data name="INSTALL_NO_SPACE" xml:space="preserve">
+    <value>Не хватает места для установки. Пожалуйста, очистите место и нажмите кнопку "Обновить". Если вы хотите изменить папку назначения, закройте программу установки и снова запустите ее. Для принудительной установки нажмите красную кнопку "Вперёд".</value>
+  </data>
+  <data name="BUTTON_CLEANUP" xml:space="preserve">
+    <value>Очистка</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_GRAPHICS" xml:space="preserve">
+    <value>Удалить графику из Документов</value>
+  </data>
+  <data name="INSTALLOPTION_REMOVE_SAVEGAMES" xml:space="preserve">
+    <value>Удалить сохранения из Документов</value>
+  </data>
+  <data name="INSTALLOPTION_CLEANUP_TIP" xml:space="preserve">
+    <value>Удалить ненужные файлы в папке с игрой и в Документах перед установкой</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE" xml:space="preserve">
+    <value>Язык игры</value>
+  </data>
+  <data name="INSTALLOPTION_GAMELANGUAGE_TIP" xml:space="preserve">
+    <value>Язык можно поменять позже, с помощью инструмента "Language Selector" (доступен в папке с игрой)</value>
+  </data>
+  <data name="INSTALLOPTION_REFRESH_TIP" xml:space="preserve">
+    <value>Перерасчёт доступного места</value>
+  </data>
+  <data name="INSTALLOPTION_3D_BANNERPACK" xml:space="preserve">
+    <value>Пак 3D баннеров</value>
+  </data>
+  <data name="INSTALLOPTION_SELECT_THEME" xml:space="preserve">
+    <value>Выбрать тему</value>
+  </data>
+  <data name="INSTALLOPTION_THEME" xml:space="preserve">
+    <value>Выберите тему</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
+    <value>Светлая (Стандартная)</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
+    <value>Тёмная</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
+    <value>Тема</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_NOTE" xml:space="preserve">
+    <value>Тему также можно поменять в опциях игры</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_1" xml:space="preserve">
+    <value>Без стадионов</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_2" xml:space="preserve">
+    <value>Базовый ({0} стад.)</value>
+  </data>
+  <data name="INSTALLOPTION_STADIUMS_3" xml:space="preserve">
+    <value>Полный ({0} стад.)</value>
+  </data>
+  <data name="INSTALLOPTION_XXL_PORTRAITS" xml:space="preserve">
+    <value>Портреты XXL</value>
+  </data>
+  <data name="DESCRIPTION_TEXT_UPDATE" xml:space="preserve">
+    <value>Этот установщик установит патч FIFA Manager {0} (Обновление {1}) в директорию FIFA Manager.</value>
+  </data>
+  <data name="ERROR_CONFIG" xml:space="preserve">
+    <value>Присутствуют ошибки в формате файла конфигурации</value>
+  </data>
+  <data name="ERROR_MISSING_FILE" xml:space="preserve">
+    <value>Отсутствует файл:</value>
+  </data>
+  <data name="ERROR_MISSING_FILES" xml:space="preserve">
+    <value>Отсутствуют файлы:</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_DOES_NOT_MATCH" xml:space="preserve">
+    <value>Вы не можете установить обновления патча, так как конфигурация установленного патча не соответствует доступным файлам установщика. У вас все еще есть возможность переустановить патч с новой конфигурацией.</value>
+  </data>
+  <data name="INSTALLDIR_CONFIG_MAKE_SURE" xml:space="preserve">
+    <value>Если вы хотите установить обновления для текущей конфигурации патча, убедитесь, что эти файлы доступны:</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL" xml:space="preserve">
+    <value>Установить патч</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATE" xml:space="preserve">
+    <value>Установить Обновление {0}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_UPDATES" xml:space="preserve">
+    <value>Установить Обновления {0} и {1}</value>
+  </data>
+  <data name="INSTALLDIR_INSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Установить патч со всеми обновлениями</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES" xml:space="preserve">
+    <value>Вы не можете установить патч, потому что отсутствуют следующие файлы:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL" xml:space="preserve">
+    <value>Вы не можете переустановить патч с помощью этого установщика, потому что отсутствуют следующие файлы:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_REINSTALL_BUT" xml:space="preserve">
+    <value>Но вы не можете переустановить патч, потому что отсутствуют эти файлы:</value>
+  </data>
+  <data name="INSTALLDIR_MISSING_FILES_UPDATES" xml:space="preserve">
+    <value>Вы не можете установить обновления патча, потому что отсутствуют следующие файлы:</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL" xml:space="preserve">
+    <value>Переустановить патч</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATE" xml:space="preserve">
+    <value>Переустановить Обновление {0}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_UPDATES" xml:space="preserve">
+    <value>Переустановить Обновления {0} и {1}</value>
+  </data>
+  <data name="INSTALLDIR_REINSTALL_WITH_UPDATES" xml:space="preserve">
+    <value>Переустановить патч со всеми обновлениями</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL" xml:space="preserve">
+    <value>У вас все еще есть возможность переустановить патч.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATE" xml:space="preserve">
+    <value>У вас все еще есть возможность переустановить Обновление {0}.</value>
+  </data>
+  <data name="INSTALLDIR_STILL_REINSTALL_UPDATES" xml:space="preserve">
+    <value>У вас все еще есть возможность переустановить Обновления {0} и {1}.</value>
+  </data>
+  <data name="INSTALLDIR_UPDATE" xml:space="preserve">
+    <value>Обновление {0}</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_CURRENT" xml:space="preserve">
+    <value>Текущая установлення версия — FIFA Manager {0}.{1}.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_GREATER" xml:space="preserve">
+    <value>Текущая установленная версия ({0}.{1}) больше версии установщика ({0}.{2}). Возможно, вы используете устаревшую версию установщика. С помощью этого установщика вы можете обновить версию патча до {0}.{2}, только переустановив патч.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_NOT_INSTALLED" xml:space="preserve">
+    <value>Патч (FIFA Manager {0}) ещё не был установлен на этой игре.</value>
+  </data>
+  <data name="INSTALLDIR_VERSION_SAME" xml:space="preserve">
+    <value>Вы уже установили патч версии {0}.{1} (та же версия, что и установщик).</value>
+  </data>
+</root>
