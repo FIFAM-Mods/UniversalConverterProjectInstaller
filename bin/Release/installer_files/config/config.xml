@@ -29,6 +29,7 @@
         <action type="RemoveFolder" path="portraits/HallOfFame/160x160" message="Removing portraits folder" />
         <action type="RemoveFolder" path="screens" message="Removing screens folder" />
         <action type="RemoveFolder" path="script" message="Removing script folder" />
+        <action type="RemoveFolder" path="sponsors" message="Removing sponsors folder" />
         <action type="RemoveFolder" path="ucp_popups" message="Removing ucp_popups folder" />
         <action type="RemoveFolder" path="custom_pictures" message="Removing custom_pictures folder" />
         <action type="RemoveFolder" path="plugins" message="Uninstalling plugins" />
@@ -38,6 +39,7 @@
         <action type="RemoveFolder" path="data/kitarmband" message="Uninstalling kits" />
         <action type="RemoveFolder" path="data/kitcompbadges" message="Uninstalling kits" />
         <action type="RemoveFolder" path="data/kitnumbers" message="Uninstalling kits" />
+        <action type="RemoveFolder" path="data/banners" message="Uninstalling banners" />
         <action type="RemoveFolder" path="data/zdata" message="Uninstalling assets" />
         <action type="RemoveFolder" path="data/assets" message="Uninstalling assets" />
         <action type="RemoveFolder" path="data/balls" message="Uninstalling assets" />

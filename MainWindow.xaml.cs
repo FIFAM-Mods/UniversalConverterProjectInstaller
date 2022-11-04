@@ -1020,6 +1020,7 @@ namespace UniversalConverterProjectInstaller
                         }
                     }
                 }
+                ChkRemoveGraphics.IsEnabled = CbInstallType.SelectedIndex == 0;
                 int targetLanguage = 2;
                 if (lang == "eng")
                     targetLanguage = 2;
