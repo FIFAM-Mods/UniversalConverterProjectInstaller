@@ -4,12 +4,12 @@
 		<file name="installer_files/themes/dark/ucp.ini" />
 	</requirements>
     <variables>
-	    <variable name="numPortraits1" value="175'000" />
-		<variable name="numPortraits2" value="55'000" />
-		<variable name="numBadges1" value="12'000" />
-		<variable name="numBadges2" value="12'000" />
-		<variable name="numStadiums1" value="120" />
-		<variable name="numStadiums2" value="452" />
+	    <variable name="numPortraits1" value="189'930" />
+		<variable name="numPortraits2" value="62'443" />
+		<variable name="numBadges1" value="13'015" />
+		<variable name="numBadges2" value="13'015" />
+		<variable name="numStadiums1" value="122" />
+		<variable name="numStadiums2" value="861" />
 	</variables>
 	<group name="Start" update="99">
         <action type="RemoveFile" path="big.idx" message="Removing BIG index" />
@@ -54,6 +54,7 @@
         <action type="RemoveFile" path="Manager14.ico" message="Deleting original icon" />
         <action type="RemoveFile" path="fmdata/Restore.dat" message="Deleting original database" />
         <action type="RemoveFile" path="fmdata/Restore.big" message="Deleting original database" />
+        <action type="RemoveFile" path="fmdata/WM-Master.dat" message="Deleting original database" />
         <action type="RemoveFile" path="fmdata/UCP_FemaleCommonNames.bin" message="Deleting previous database" />
         <action type="RemoveFile" path="fmdata/UCP_FemaleNames.bin" message="Deleting previous database" />
         <action type="RemoveFile" path="fmdata/UCP_FemaleSurnames.bin" message="Deleting previous database" />
@@ -97,7 +98,6 @@
     </group>
 	<group name="End" update="99">
         <action type="CopyFile" path="fmdata/Restore.dat" to="database/Master.dat" size="50" message="Installing Editor database" />
-        <action type="CopyFile" path="fmdata/Restore.dat" to="fmdata/WM-Master.dat" size="50" message="Installing World Cup database" />
         <action type="LocaleIni" message="Updating locale file" />
         <action type="UcpIni" message="Updating settings file" />
         <action type="CleanDocumentsGraphics" message="Removing graphics from Documents" />

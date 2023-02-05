@@ -68,7 +68,7 @@
                     <TextBox Name="TbInstallDir" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,161,0,0" FontSize="16" FontFamily="Segoe UI Italic" Width="596" Height="28" TextChanged="TbInstallDir_TextChanged" VerticalContentAlignment="Center" Padding="5,-1,5,0" />
                     <Button Name="BtnBrowseGameDir" Height="28" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="654,161,0,0" Click="BtnBrowseGameDir_Click" Content="{x:Static res:Resource.INSTALLDIR_BROWSE}" FontSize="14"/>
                     <TextBlock Name="TxInstallDirStatus" Width="710" Text="{x:Static res:Resource.INSTALLDIR_ERROR}" TextWrapping="Wrap" Margin="44,201,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI"/>
-                    <Grid Name="GridInstallType" Visibility="Visible">
+                    <Grid Name="GridInstallType" Visibility="Hidden">
                         <TextBlock Margin="44,201,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLDIR_ACTION}"/>
                         <ComboBox Name="CbInstallType" FontSize="15" FontFamily="Segoe UI" Height="30" Width="710" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="45,230,0,0" VerticalContentAlignment="Center" Padding="10,3,4,3" IsEnabled="False" SelectedIndex="0">
                             <ComboBoxItem Content="{x:Static res:Resource.INSTALLDIR_INSTALL}" VerticalContentAlignment="Center" Padding="10,1,4,1" Height="30"/>
@@ -85,7 +85,7 @@
                     <Grid>
                         <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="28,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_PORTRAITS_1}" FontWeight="Bold"/>
                         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="232" Stroke="#FFA0A0A0" Margin="30,160,0,0" />
-                        <Image Source="portraits_1.png" Stretch="None" Margin="38,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Image Source="portraits_1.png" Stretch="Fill" Margin="38,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Height="160" />
                         <Ellipse Margin="48,345,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <Ellipse Margin="48,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <TextBlock Name="TbPortraits1" Margin="66,336,0,0" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_PORTRAITS_1_INFO1}"/>
@@ -106,7 +106,7 @@
                     <Grid>
                         <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="428,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_PORTRAITS_2}" FontWeight="Bold"/>
                         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="232" Stroke="#FFA0A0A0" Margin="430,160,0,0" />
-                        <Image Source="portraits_2.png" Stretch="None" Margin="438,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Image Source="portraits_2.png" Stretch="Fill" Margin="438,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Height="160" />
                         <Ellipse Margin="448,345,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <Ellipse Margin="448,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <TextBlock Name="TbPortraits2" Margin="466,336,0,0" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_PORTRAITS_2_INFO1}"/>
@@ -132,7 +132,7 @@
                     <Grid>
                         <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="28,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_BADGES_1}" FontWeight="Bold"/>
                         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="232" Stroke="#FFA0A0A0" Margin="30,160,0,0" />
-                        <Image Source="badges_1.png" Stretch="None" Margin="38,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Image Source="badges_1.png" Stretch="Fill" Margin="38,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Height="160" />
                         <Ellipse Margin="48,345,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <Ellipse Margin="48,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <TextBlock Name="TbBadges1" Margin="66,336,0,0" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_BADGES_1_INFO1}"/>
@@ -153,7 +153,7 @@
                     <Grid>
                         <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="428,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_BADGES_2}" FontWeight="Bold"/>
                         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="232" Stroke="#FFA0A0A0" Margin="430,160,0,0" />
-                        <Image Source="badges_2.png" Stretch="None" Margin="438,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <Image Source="badges_2.png" Stretch="Fill" Margin="438,168,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="326" Height="160" />
                         <Ellipse Margin="448,345,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <Ellipse Margin="448,367,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="5" Width="5" Fill="Black"/>
                         <TextBlock Name="TbBadges2" Margin="466,336,0,0" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_BADGES_2_INFO1}"/>

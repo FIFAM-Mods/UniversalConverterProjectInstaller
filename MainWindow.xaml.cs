@@ -299,6 +299,34 @@ namespace UniversalConverterProjectInstaller
                 else
                     destPath = NodeAttr(node, "to");
                 string message = NodeAttr(node, "message");
+                if (entryType == InstallationEntryType.RemoveFile
+                    || entryType == InstallationEntryType.CopyFile
+                    || entryType == InstallationEntryType.CopyFolder
+                    || entryType == InstallationEntryType.RemoveFolder
+                    || entryType == InstallationEntryType.CreateFolder
+                    || entryType == InstallationEntryType.RemoveFilesByMask
+                    || entryType == InstallationEntryType.UnpackArchive
+                    )
+                {
+                    if (string.IsNullOrEmpty(fileName))
+                        configErrors.Add("'action.path' can't be empty");
+                    else if (fileName.StartsWith("/") || fileName.StartsWith("\\") || fileName.Contains("./") || fileName.Contains(".\\"))
+                        configErrors.Add("'action.path' is invalid");
+                }
+                else if (entryType == InstallationEntryType.CopyFile || entryType == InstallationEntryType.CopyFolder)
+                {
+                    if (string.IsNullOrEmpty(destPath))
+                        configErrors.Add("'action.to' can't be empty");
+                    else if (destPath.StartsWith("/") || destPath.StartsWith("\\") || destPath.Contains("./") || destPath.Contains(".\\"))
+                        configErrors.Add("'action.to' is invalid");
+                }
+                else if (entryType == InstallationEntryType.RemoveFilesByMask)
+                {
+                    if (string.IsNullOrEmpty(destPath))
+                        configErrors.Add("'action.mask' can't be empty");
+                    else if (destPath.StartsWith("/") || destPath.StartsWith("\\") || destPath.Contains("./") || destPath.Contains(".\\"))
+                        configErrors.Add("'action.mask' is invalid");
+                }
                 installXml.actions.Add(new InstallationEntry(fileName, entryType, destPath, message, size, updateVersion, tag));
             }
         }
@@ -1220,7 +1248,7 @@ namespace UniversalConverterProjectInstaller
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.RemoveFile)
                     {
-                        string filePath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mDestPath);
+                        string filePath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mFileName);
                         if (System.IO.File.Exists(filePath))
                         {
                             RemoveReadOnly(filePath);
@@ -1243,7 +1271,7 @@ namespace UniversalConverterProjectInstaller
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.RemoveFolder)
                     {
-                        string folderPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mDestPath);
+                        string folderPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mFileName);
                         if (Directory.Exists(folderPath))
                         {
                             Directory.Delete(folderPath, true);
@@ -1251,7 +1279,7 @@ namespace UniversalConverterProjectInstaller
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.CreateFolder)
                     {
-                        string folderPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mDestPath);
+                        string folderPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mFileName);
                         Directory.CreateDirectory(folderPath);
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.RemoveFilesByMask)
@@ -1413,25 +1441,25 @@ namespace UniversalConverterProjectInstaller
                     {
                         object shDesktop = (object)"Desktop";
                         WshShell shell = new WshShell();
-                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager 2022.lnk";
+                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager 2023.lnk";
                         IWshShortcut managerShortcut = (IWshShortcut)shell.CreateShortcut(managerAddress);
                         if (lang == "ger" || lang == "deu")
-                            managerShortcut.Description = "Fussball Manager 2022";
+                            managerShortcut.Description = "Fussball Manager 2023";
                         else if (lang == "fre" || lang == "fra")
-                            managerShortcut.Description = "LFP Manager 2022";
+                            managerShortcut.Description = "LFP Manager 2023";
                         else
-                            managerShortcut.Description = "FIFA Manager 2022";
+                            managerShortcut.Description = "FIFA Manager 2023";
                         managerShortcut.TargetPath = mTargetFolder + "\\Manager.exe";
                         managerShortcut.WorkingDirectory = mTargetFolder;
                         managerShortcut.Save();
-                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor 2022.lnk";
+                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor 2023.lnk";
                         IWshShortcut editorShortcut = (IWshShortcut)shell.CreateShortcut(editorAddress);
                         if (lang == "fre" || lang == "fra")
-                            editorShortcut.Description = "Éditeur 2022";
+                            editorShortcut.Description = "Éditeur 2023";
                         if (lang == "rus" || lang == "ukr" || lang == "bel" || lang == "kaz" || lang == "aze")
-                            editorShortcut.Description = "Редактор 2022";
+                            editorShortcut.Description = "Редактор 2023";
                         else
-                            editorShortcut.Description = "Editor 2022";
+                            editorShortcut.Description = "Editor 2023";
                         editorShortcut.TargetPath = mTargetFolder + "\\EdManager.exe";
                         editorShortcut.WorkingDirectory = mTargetFolder;
                         editorShortcut.Save();
@@ -1808,9 +1836,9 @@ namespace UniversalConverterProjectInstaller
             var sb = new StringBuilder();
             foreach (var c in text)
             {
-                if (c == '\\' || c == '{' || c == '}')
-                    sb.Append(@"\" + c);
-                else if (c <= 0x7f)
+                //if (c == '\\' || c == '{' || c == '}')
+                //    sb.Append(@"\" + c);
+                if (c <= 0x7f)
                     sb.Append(c);
                 else
                     sb.Append("\\u" + Convert.ToUInt32(c) + "?");

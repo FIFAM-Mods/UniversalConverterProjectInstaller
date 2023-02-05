@@ -349,10 +349,10 @@
     <value>Необхідне місце для встановлення:</value>
   </data>
   <data name="INSTALLOPTION_SELECT" xml:space="preserve">
-    <value>Вибрати стиль</value>
+    <value>Обрати стиль</value>
   </data>
   <data name="INSTALLOPTION_SELECT_THEME" xml:space="preserve">
-    <value>Вибрати тему</value>
+    <value>Обрати тему</value>
   </data>
   <data name="INSTALLOPTION_STADIUMS_1" xml:space="preserve">
     <value>Без стадіонів</value>
