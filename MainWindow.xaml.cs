@@ -487,8 +487,7 @@ namespace UniversalConverterProjectInstaller
             CbBadges.SelectionChanged += ConfigUpdateSizes;
             BtnUpdate.Click += ConfigUpdateSizes;
             BtnCleanup.Click += CleanUp;
-            CultureInfo ci = CultureInfo.InstalledUICulture;
-            lang = ci.ThreeLetterISOLanguageName.ToLower();
+            lang = Thread.CurrentThread.CurrentUICulture.ThreeLetterISOLanguageName.ToLower();
             if (mCulture == "de-DE")
             {
                 FmVersionEng.Visibility = Visibility.Hidden;
