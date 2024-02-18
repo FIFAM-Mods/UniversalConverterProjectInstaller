@@ -25,6 +25,8 @@ using IWshRuntimeLibrary;
 using System.Diagnostics;
 using Microsoft.Win32;
 using System.Xml;
+using System.Runtime.InteropServices.ComTypes;
+using static Microsoft.WindowsAPICodePack.Shell.PropertySystem.SystemProperties.System;
 
 namespace UniversalConverterProjectInstaller
 {
@@ -304,7 +306,6 @@ namespace UniversalConverterProjectInstaller
                     || entryType == InstallationEntryType.CopyFolder
                     || entryType == InstallationEntryType.RemoveFolder
                     || entryType == InstallationEntryType.CreateFolder
-                    || entryType == InstallationEntryType.RemoveFilesByMask
                     || entryType == InstallationEntryType.UnpackArchive
                     )
                 {
@@ -472,8 +473,7 @@ namespace UniversalConverterProjectInstaller
             RbPortraits2.Checked += PortraitsRbChecked;
             RbBadges1.Checked += BadgesRbChecked;
             RbBadges2.Checked += BadgesRbChecked;
-            RbTheme1.Checked += ThemeRbChecked;
-            RbTheme2.Checked += ThemeRbChecked;
+            CbTheme.SelectionChanged += ThemeCbSelectionChanged;
             ChkXxlPortraits.Checked += ConfigUpdateSizes;
             ChkXxlPortraits.Unchecked += ConfigUpdateSizes;
             ChkKitPack.Checked += ConfigUpdateSizes;
@@ -573,7 +573,7 @@ namespace UniversalConverterProjectInstaller
         {
             if (System.IO.File.Exists(filename))
             {
-                System.IO.File.SetAttributes(filename, FileAttributes.Normal);
+                System.IO.File.SetAttributes(filename, System.IO.FileAttributes.Normal);
             }
         }
 
@@ -624,12 +624,21 @@ namespace UniversalConverterProjectInstaller
             }
         }
 
-        private void ThemeRbChecked(object sender, RoutedEventArgs e)
+        private void ThemeCbSelectionChanged(object sender, RoutedEventArgs e)
         {
             if (initialized)
             {
-                if (TheTab.SelectedIndex == 5)
-                    BtnNext.IsEnabled = true;
+                if (CbTheme.SelectedIndex == 0) {
+                    ImgTheme.Source = new BitmapImage(new Uri("theme_1.png", UriKind.Relative));
+                }
+                else if (CbTheme.SelectedIndex == 1)
+                {
+                    ImgTheme.Source = new BitmapImage(new Uri("theme_2.png", UriKind.Relative));
+                }
+                else if (CbTheme.SelectedIndex == 2)
+                {
+                    ImgTheme.Source = new BitmapImage(new Uri("theme_3.png", UriKind.Relative));
+                }
             }
         }
 
@@ -943,7 +952,7 @@ namespace UniversalConverterProjectInstaller
             }
             else if (index == 5) // Theme screen
             {
-                BtnNext.IsEnabled = (RbTheme1.IsChecked == true || RbTheme2.IsChecked == true);
+                BtnNext.IsEnabled = true;
             }
             else if (index == 6) // Config
             {
@@ -989,7 +998,7 @@ namespace UniversalConverterProjectInstaller
                     }
                     BtnCleanup.IsEnabled = true;
                     ChkRemoveGraphics.IsChecked = true;
-                    CbTheme.SelectedIndex = (RbTheme2.IsChecked == true) ? 1 : 0;
+                    CbThemeFinal.SelectedIndex = CbTheme.SelectedIndex;
                 }
                 else
                 {
@@ -1034,20 +1043,9 @@ namespace UniversalConverterProjectInstaller
                         GetPrivateProfileString("OPTIONS", "TEXT_LANGUAGE", lang, sb, sb.Capacity, localeSrcFile);
                         lang = sb.ToString();
                     }
-
-                    var docsDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                    if (!string.IsNullOrEmpty(docsDir))
-                    {
-                        string ucpSettingsFile = System.IO.Path.Combine(TbInstallDir.Text, "FM\\Config\\ucp.ini");
-                        if (System.IO.File.Exists(ucpSettingsFile))
-                        {
-                            StringBuilder sb = new StringBuilder(256);
-                            GetPrivateProfileString("MAIN", "THEME", lang, sb, sb.Capacity, ucpSettingsFile);
-                            CbTheme.SelectedIndex = sb.ToString().ToLower() == "dark" ? 1 : 0;
-                        }
-                    }
+                    CbThemeFinal.SelectedIndex = -1;
+                    CbThemeFinal.IsEnabled = false;
                 }
-                ChkRemoveGraphics.IsEnabled = CbInstallType.SelectedIndex == 0;
                 int targetLanguage = 2;
                 if (lang == "eng")
                     targetLanguage = 2;
@@ -1097,7 +1095,7 @@ namespace UniversalConverterProjectInstaller
                 BtnX.IsEnabled = false;
                 mTargetFolder = TbInstallDir.Text;
                 mGameLanguage = CbGameLanguage.SelectedIndex;
-                mTheme = CbTheme.SelectedIndex;
+                mTheme = CbThemeFinal.SelectedIndex;
                 if (mTargetFolder.EndsWith("\\") || mTargetFolder.EndsWith("/"))
                     mTargetFolder = mTargetFolder.Remove(mTargetFolder.Length - 1);
                 TxDebug.Visibility = mDebug ? Visibility.Visible : Visibility.Hidden;
@@ -1283,7 +1281,15 @@ namespace UniversalConverterProjectInstaller
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.RemoveFilesByMask)
                     {
-                        string dirPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mFileName);
+                        string dirPath;
+                        if (string.IsNullOrEmpty(installationEntries[i].mFileName))
+                        {
+                            dirPath = mTargetFolder;
+                        }
+                        else
+                        {
+                            dirPath = System.IO.Path.Combine(mTargetFolder, installationEntries[i].mFileName);
+                        }
                         if (Directory.Exists(dirPath))
                         {
                             var dir = new DirectoryInfo(dirPath);
@@ -1390,9 +1396,10 @@ namespace UniversalConverterProjectInstaller
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.UcpIni)
                     {
+                        var docsDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments, Environment.SpecialFolderOption.Create);
+                        if (!string.IsNullOrEmpty(docsDir))
                         {
-                            var docsDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                            if (!string.IsNullOrEmpty(docsDir) && Directory.Exists(docsDir))
+                            if (Directory.Exists(docsDir))
                             {
                                 string ucpLaunchedFile = System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-launched");
                                 if (System.IO.File.Exists(ucpLaunchedFile))
@@ -1400,65 +1407,74 @@ namespace UniversalConverterProjectInstaller
                                     RemoveReadOnly(ucpLaunchedFile);
                                     System.IO.File.Delete(ucpLaunchedFile);
                                 }
+                                string ucpEulaFile = System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-eula-shown");
+                                if (System.IO.File.Exists(ucpEulaFile))
+                                {
+                                    RemoveReadOnly(ucpEulaFile);
+                                    System.IO.File.Delete(ucpEulaFile);
+                                }
                             }
-                        }
-                        if (mTheme == 1)
-                        {
-                            var docsDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments, Environment.SpecialFolderOption.Create);
-                            if (!string.IsNullOrEmpty(docsDir))
+                            string configDir = System.IO.Path.Combine(docsDir, "FM\\Config");
+                            Directory.CreateDirectory(configDir);
+                            string ucpSettingsFile = System.IO.Path.Combine(configDir, "ucp.ini");
+                            string settingsText = "";
+                            if (mTheme == 1)
                             {
-                                string configDir = System.IO.Path.Combine(docsDir, "FM\\Config");
-                                Directory.CreateDirectory(configDir);
-                                string ucpSettingsFile = System.IO.Path.Combine(configDir, "ucp.ini");
-                                if (System.IO.File.Exists(ucpSettingsFile))
-                                {
-                                    RemoveReadOnly(ucpSettingsFile);
-                                    System.IO.File.Delete(ucpSettingsFile);
-                                }
-                                string srcFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "installer_files\\themes\\dark\\ucp.ini");
-                                if (System.IO.File.Exists(srcFilePath))
-                                {
-                                    System.IO.File.Copy(srcFilePath, ucpSettingsFile, true);
-                                }
+                                settingsText += "THEME = light\r\n";
                             }
-                        }
-                        else
-                        {
-                            var docsDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                            if (!string.IsNullOrEmpty(docsDir) && Directory.Exists(docsDir))
+                            else if (mTheme == 2)
                             {
-                                string ucpSettingsFile = System.IO.Path.Combine(docsDir, "FM\\Config\\ucp.ini");
-                                if (System.IO.File.Exists(ucpSettingsFile))
-                                {
-                                    RemoveReadOnly(ucpSettingsFile);
-                                    System.IO.File.Delete(ucpSettingsFile);
-                                }
+                                settingsText += "THEME = dark\r\n";
                             }
+                            if (System.IO.File.Exists(ucpSettingsFile))
+                            {
+                                string[] lines = System.IO.File.ReadAllLines(ucpSettingsFile);
+                                for (var s = 0; s < lines.Length; s += 1)
+                                {
+                                    if (!string.IsNullOrEmpty(lines[s]))
+                                    {
+                                        string lineLow = lines[s].ToLower();
+                                        if (!lineLow.StartsWith("theme ") && !lineLow.StartsWith("theme\t") && !lineLow.StartsWith("theme="))
+                                        {
+                                            settingsText += lines[s];
+                                            settingsText += "\r\n";
+                                        }
+                                    }
+                                }
+                                RemoveReadOnly(ucpSettingsFile);
+                                System.IO.File.Delete(ucpSettingsFile);
+                            }
+                            System.IO.File.WriteAllText(ucpSettingsFile, settingsText);
+                            //string srcFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "installer_files\\themes\\dark\\ucp.ini");
+                            //if (System.IO.File.Exists(srcFilePath))
+                            //{
+                            //    System.IO.File.Copy(srcFilePath, ucpSettingsFile, true);
+                            //}
                         }
                     }
                     else if (installationEntries[i].mType == InstallationEntryType.DesktopShortcuts)
                     {
                         object shDesktop = (object)"Desktop";
                         WshShell shell = new WshShell();
-                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager 2023.lnk";
+                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager 2024.lnk";
                         IWshShortcut managerShortcut = (IWshShortcut)shell.CreateShortcut(managerAddress);
                         if (lang == "ger" || lang == "deu")
-                            managerShortcut.Description = "Fussball Manager 2023";
+                            managerShortcut.Description = "Fussball Manager 2024";
                         else if (lang == "fre" || lang == "fra")
-                            managerShortcut.Description = "LFP Manager 2023";
+                            managerShortcut.Description = "LFP Manager 2024";
                         else
-                            managerShortcut.Description = "FIFA Manager 2023";
+                            managerShortcut.Description = "FIFA Manager 2024";
                         managerShortcut.TargetPath = mTargetFolder + "\\Manager.exe";
                         managerShortcut.WorkingDirectory = mTargetFolder;
                         managerShortcut.Save();
-                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor 2023.lnk";
+                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor 2024.lnk";
                         IWshShortcut editorShortcut = (IWshShortcut)shell.CreateShortcut(editorAddress);
                         if (lang == "fre" || lang == "fra")
-                            editorShortcut.Description = "Éditeur 2023";
-                        if (lang == "rus" || lang == "ukr" || lang == "bel" || lang == "kaz" || lang == "aze")
-                            editorShortcut.Description = "Редактор 2023";
+                            editorShortcut.Description = "Éditeur 2024";
+                        if (lang == "rus" || lang == "ukr")
+                            editorShortcut.Description = "Редактор 2024";
                         else
-                            editorShortcut.Description = "Editor 2023";
+                            editorShortcut.Description = "Editor 2024";
                         editorShortcut.TargetPath = mTargetFolder + "\\EdManager.exe";
                         editorShortcut.WorkingDirectory = mTargetFolder;
                         editorShortcut.Save();

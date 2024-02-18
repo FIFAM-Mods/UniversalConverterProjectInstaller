@@ -1,2 +1,2 @@
-big.idx generator for FIFA Manager 21 1.2
+big.idx generator for FIFA Manager 24 1.0
 written by Dmitri

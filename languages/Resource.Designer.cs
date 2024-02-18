@@ -808,7 +808,7 @@ namespace UniversalConverterProjectInstaller.languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Light (Default).
+        ///   Looks up a localized string similar to Classic.
         /// </summary>
         public static string INSTALLOPTION_THEME_1 {
             get {
@@ -817,11 +817,20 @@ namespace UniversalConverterProjectInstaller.languages {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dark.
+        ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string INSTALLOPTION_THEME_2 {
             get {
                 return ResourceManager.GetString("INSTALLOPTION_THEME_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dark.
+        /// </summary>
+        public static string INSTALLOPTION_THEME_3 {
+            get {
+                return ResourceManager.GetString("INSTALLOPTION_THEME_3", resourceCulture);
             }
         }
         

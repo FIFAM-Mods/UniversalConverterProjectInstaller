@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UniversalConverterProjectInstaller"
         xmlns:res="clr-namespace:UniversalConverterProjectInstaller.languages"
         mc:Ignorable="d"
-        Title="FM 2023 Installer" ResizeMode="NoResize" Height="540" Width="800"
+        Title="FM 2024 Installer" ResizeMode="NoResize" Height="540" Width="800"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -47,7 +47,7 @@
         <Image Name="FmVersionEng" Source="FmVersion_eng.png" Stretch="None" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
         <Image Name="FmVersionGer" Source="FmVersion_ger.png" Stretch="None" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" />
         <Image Name="FmVersionFre" Source="FmVersion_fre.png" Stretch="None" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Hidden" />
-        <Label Name="LblVersion" FontSize="18" FontFamily="Arial" Foreground="#FFe86423" Content="0.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="650,40,0,0" FontWeight="Bold" FontStyle="Italic"/>
+        <Label Name="LblVersion" FontSize="18" FontFamily="Arial" Foreground="#FF07f468" Content="0.0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="650,40,0,0" FontWeight="Bold" FontStyle="Italic"/>
         <TabControl SelectedIndex="0" Name="TheTab" Background="Transparent" Padding="0"  BorderThickness="0">
             <TabItem Visibility="Hidden" Margin="0" Width="0" Height="0" Padding="0">
                 <Grid>
@@ -176,40 +176,12 @@
             <TabItem Visibility="Hidden" Margin="0" Width="0" Height="0" Padding="0">
                 <Grid>
                     <TextBlock TextWrapping="WrapWithOverflow" Width="310" Margin="0,100,0,1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Italic" Foreground="#FF505D61" Text="{x:Static res:Resource.INSTALLOPTION_THEME}"/>
-                    <Grid>
-                        <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="28,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_THEME_1}" FontWeight="Bold"/>
-                        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="191" Stroke="#FFA0A0A0" Margin="30,160,0,0" />
-                        <Image Source="theme_1.png" Margin="31,161,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="338" Height="189" Stretch="Fill" />
-                        <Grid Margin="30,366,0,0" Width="340" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29">
-                            <RadioButton Name="RbTheme1" GroupName="Portraits" Content="{x:Static res:Resource.INSTALLOPTION_SELECT_THEME}" FontSize="14" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Padding="2,-1,0,0" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" >
-                                <RadioButton.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.29" ScaleY="1.29"/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </RadioButton.RenderTransform>
-                            </RadioButton>
-                        </Grid>
-                    </Grid>
-                    <Grid>
-                        <TextBlock TextWrapping="WrapWithOverflow" Width="342" Margin="428,132,0,1" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI" Text="{x:Static res:Resource.INSTALLOPTION_THEME_2}" FontWeight="Bold"/>
-                        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="340" Height="191" Stroke="#FFA0A0A0" Margin="430,160,0,0" />
-                        <Image Source="theme_2.png" Margin="431,161,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="338" Height="189" Stretch="Fill" />
-                        <Grid Margin="430,366,0,0" Width="340" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29">
-                            <RadioButton Name="RbTheme2" GroupName="Portraits" Content="{x:Static res:Resource.INSTALLOPTION_SELECT_THEME}" FontSize="14" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top" Background="{x:Null}" Padding="2,-1,0,0" RenderTransformOrigin="0.5,0.5" VerticalContentAlignment="Center" >
-                                <RadioButton.RenderTransform>
-                                    <TransformGroup>
-                                        <ScaleTransform ScaleX="1.29" ScaleY="1.29"/>
-                                        <SkewTransform/>
-                                        <RotateTransform/>
-                                        <TranslateTransform/>
-                                    </TransformGroup>
-                                </RadioButton.RenderTransform>
-                            </RadioButton>
-                        </Grid>
-                    </Grid>
+                    <ComboBox Name="CbTheme" Width="384" Height="24" HorizontalAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" FontSize="14" SelectedIndex="2" Margin="0,136,0,0" HorizontalContentAlignment="Center" >
+                        <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_1}"/>
+                        <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_2}"/>
+                        <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_3}"/>
+                    </ComboBox>
+                    <Image Name="ImgTheme" Source="theme_3.png" Margin="0,172,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="384" Height="216" Stretch="Fill" />
                     <TextBlock TextWrapping="WrapWithOverflow" Width="744" Margin="0,405,0,1" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Italic" Text="{x:Static res:Resource.INSTALLOPTION_THEME_NOTE}"/>
                 </Grid>
             </TabItem>
@@ -425,9 +397,10 @@
                             </ComboBoxItem>
                         </ComboBox>
                         <TextBlock TextWrapping="WrapWithOverflow" Text="{x:Static res:Resource.INSTALLOPTION_THEME_CB}" Grid.ColumnSpan="2" Grid.Row="4" FontSize="14" ToolTip="{x:Static res:Resource.INSTALLOPTION_THEME_NOTE}" Margin="0,4,0,0" Padding="0,8,0,0" />
-                        <ComboBox Name="CbTheme" Grid.ColumnSpan="2" Grid.Row="4" FontSize="14" SelectedIndex="0" Margin="56,8,0,0" MaxWidth="161">
+                        <ComboBox Name="CbThemeFinal" Grid.ColumnSpan="2" Grid.Row="4" FontSize="14" SelectedIndex="2" Margin="56,8,0,0" MaxWidth="161">
                             <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_1}"/>
                             <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_2}"/>
+                            <ComboBoxItem Content="{x:Static res:Resource.INSTALLOPTION_THEME_3}"/>
                         </ComboBox>
                     </Grid>
                     <TextBlock Name="TxInstallStart" Margin="45,388,0,0" TextWrapping="WrapWithOverflow" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontFamily="Segoe UI" Width="710" Text="{x:Static res:Resource.INSTALLDIR_START}" />

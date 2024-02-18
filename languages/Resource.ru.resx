@@ -298,10 +298,10 @@
     <value>Выберите тему</value>
   </data>
   <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
-    <value>Светлая (Стандартная)</value>
+    <value>Стандартная</value>
   </data>
   <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
-    <value>Тёмная</value>
+    <value>Светлая</value>
   </data>
   <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
     <value>Тема</value>
@@ -398,5 +398,8 @@
   </data>
   <data name="INSTALLDIR_VERSION_SAME" xml:space="preserve">
     <value>Вы уже установили патч версии {0}.{1} (та же версия, что и установщик).</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_3" xml:space="preserve">
+    <value>Тёмная</value>
   </data>
 </root>

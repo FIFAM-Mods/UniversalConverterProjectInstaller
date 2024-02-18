@@ -298,10 +298,10 @@ THIS SOFTWARE/MODIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</v
     <value>Please select theme</value>
   </data>
   <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
-    <value>Light (Default)</value>
+    <value>Classic</value>
   </data>
   <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
-    <value>Dark</value>
+    <value>Light</value>
   </data>
   <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
     <value>Theme</value>
@@ -398,5 +398,8 @@ THIS SOFTWARE/MODIFICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.</v
   </data>
   <data name="INSTALLDIR_VERSION_SAME" xml:space="preserve">
     <value>You have already installed patch version {0}.{1} (the same with installer version).</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_3" xml:space="preserve">
+    <value>Dark</value>
   </data>
 </root>

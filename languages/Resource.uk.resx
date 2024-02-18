@@ -367,10 +367,10 @@
     <value>Оберіть тему</value>
   </data>
   <data name="INSTALLOPTION_THEME_1" xml:space="preserve">
-    <value>Світла (Стандартна)</value>
+    <value>Стандартна</value>
   </data>
   <data name="INSTALLOPTION_THEME_2" xml:space="preserve">
-    <value>Темна</value>
+    <value>Світла</value>
   </data>
   <data name="INSTALLOPTION_THEME_CB" xml:space="preserve">
     <value>Тема</value>
@@ -398,5 +398,8 @@
   </data>
   <data name="NEXT_INSTALLOPTIONS" xml:space="preserve">
     <value>Натисніть зелену кнопку "Далі", щоб перейти до параметрів встановлення.</value>
+  </data>
+  <data name="INSTALLOPTION_THEME_3" xml:space="preserve">
+    <value>Темна</value>
   </data>
 </root>
