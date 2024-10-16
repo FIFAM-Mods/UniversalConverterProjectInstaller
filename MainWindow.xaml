@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:UniversalConverterProjectInstaller"
         xmlns:res="clr-namespace:UniversalConverterProjectInstaller.languages"
         mc:Ignorable="d"
-        Title="FM 2024 Installer" ResizeMode="NoResize" Height="540" Width="800"
+        Title="FM 2025 Installer" ResizeMode="NoResize" Height="540" Width="800"
         WindowStyle="None"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"

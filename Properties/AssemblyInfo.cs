@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FM 2024 installer")]
-[assembly: AssemblyDescription("FM 2024 installer")]
+[assembly: AssemblyTitle("FM 2025 installer")]
+[assembly: AssemblyDescription("FM 2025 installer")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("FM 2024 Team")]
-[assembly: AssemblyProduct("FM 2024 installer")]
-[assembly: AssemblyCopyright("Copyright ©  2020-2024")]
+[assembly: AssemblyCompany("FM 2025 Team")]
+[assembly: AssemblyProduct("FM 2025 installer")]
+[assembly: AssemblyCopyright("Copyright ©  2020-2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("24.0.0.0")]
-[assembly: AssemblyFileVersion("24.0.0.0")]
+[assembly: AssemblyVersion("25.0.0.0")]
+[assembly: AssemblyFileVersion("25.0.0.0")]

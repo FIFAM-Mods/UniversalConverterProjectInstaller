@@ -1,4 +1,4 @@
-﻿<installer version="2024" update="0" debug="true">
+﻿<installer version="2025" update="0" debug="false">
     <requirements>
 	    <file name="installer_files/tools/gen_big_idx.exe" />
 	</requirements>

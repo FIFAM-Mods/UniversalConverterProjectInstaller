@@ -1456,25 +1456,26 @@ namespace UniversalConverterProjectInstaller
                     {
                         object shDesktop = (object)"Desktop";
                         WshShell shell = new WshShell();
-                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager 2024.lnk";
+                        string yearStr = String.Format("20{0}", installXml.version);
+                        string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager " + yearStr + ".lnk";
                         IWshShortcut managerShortcut = (IWshShortcut)shell.CreateShortcut(managerAddress);
                         if (lang == "ger" || lang == "deu")
-                            managerShortcut.Description = "Fussball Manager 2024";
+                            managerShortcut.Description = "Fussball Manager " + yearStr;
                         else if (lang == "fre" || lang == "fra")
-                            managerShortcut.Description = "LFP Manager 2024";
+                            managerShortcut.Description = "LFP Manager " + yearStr;
                         else
-                            managerShortcut.Description = "FIFA Manager 2024";
+                            managerShortcut.Description = "FIFA Manager " + yearStr;
                         managerShortcut.TargetPath = mTargetFolder + "\\Manager.exe";
                         managerShortcut.WorkingDirectory = mTargetFolder;
                         managerShortcut.Save();
-                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor 2024.lnk";
+                        string editorAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\Editor " + yearStr + ".lnk";
                         IWshShortcut editorShortcut = (IWshShortcut)shell.CreateShortcut(editorAddress);
                         if (lang == "fre" || lang == "fra")
-                            editorShortcut.Description = "Éditeur 2024";
+                            editorShortcut.Description = "Éditeur " + yearStr;
                         if (lang == "rus" || lang == "ukr")
-                            editorShortcut.Description = "Редактор 2024";
+                            editorShortcut.Description = "Редактор " + yearStr;
                         else
-                            editorShortcut.Description = "Editor 2024";
+                            editorShortcut.Description = "Editor " + yearStr;
                         editorShortcut.TargetPath = mTargetFolder + "\\EdManager.exe";
                         editorShortcut.WorkingDirectory = mTargetFolder;
                         editorShortcut.Save();
