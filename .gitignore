@@ -2,3 +2,13 @@
 .obj/
 obj/
 *.ucpar
+*.exe
+*.dll
+*.pdb
+*.exe.config
+bin/Release/DotNetZip.xml
+bin/Release/Microsoft.WindowsAPICodePack.Shell.xml
+bin/Release/Microsoft.WindowsAPICodePack.ShellExtensions.xml
+bin/Release/Microsoft.WindowsAPICodePack.xml
+bin/Release/installer_files/tools/
+bin/Debug/
