@@ -1401,18 +1401,10 @@ namespace UniversalConverterProjectInstaller
                         {
                             if (Directory.Exists(docsDir))
                             {
-                                string ucpLaunchedFile = System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-launched");
-                                if (System.IO.File.Exists(ucpLaunchedFile))
-                                {
-                                    RemoveReadOnly(ucpLaunchedFile);
-                                    System.IO.File.Delete(ucpLaunchedFile);
-                                }
-                                string ucpEulaFile = System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-eula-shown");
-                                if (System.IO.File.Exists(ucpEulaFile))
-                                {
-                                    RemoveReadOnly(ucpEulaFile);
-                                    System.IO.File.Delete(ucpEulaFile);
-                                }
+                                RemoveFile(System.IO.Path.Combine(docsDir, "FM\\Config\\JukeBox.dta"));
+                                RemoveFile(System.IO.Path.Combine(docsDir, "FM\\Config\\TFM_Options.dta"));
+                                RemoveFile(System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-launched"));
+                                RemoveFile(System.IO.Path.Combine(docsDir, "FM\\Config\\ucp-eula-shown"));
                             }
                             string configDir = System.IO.Path.Combine(docsDir, "FM\\Config");
                             Directory.CreateDirectory(configDir);
