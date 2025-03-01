@@ -1,14 +1,14 @@
-﻿<installer version="2025" update="0" debug="false">
+﻿<installer version="2025" update="0">
     <requirements>
 	    <file name="installer_files/tools/gen_big_idx.exe" />
 	</requirements>
     <variables>
-	    <variable name="numPortraits1" value="214'483" />
-		<variable name="numPortraits2" value="66'976" />
-		<variable name="numBadges1" value="13'723" />
-		<variable name="numBadges2" value="13'723" />
-		<variable name="numStadiums1" value="122" />
-		<variable name="numStadiums2" value="1'256" />
+	    <variable name="numPortraits1" value="243'000" />
+		<variable name="numPortraits2" value="71'000" />
+		<variable name="numBadges1" value="14'451" />
+		<variable name="numBadges2" value="14'451" />
+		<variable name="numStadiums1" value="123" />
+		<variable name="numStadiums2" value="1'216" />
 	</variables>
 	<group name="Start" update="99">
         <action type="RemoveFile" path="big.idx" message="Removing BIG index" />

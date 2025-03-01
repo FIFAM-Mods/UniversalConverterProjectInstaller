@@ -1420,19 +1420,20 @@ namespace UniversalConverterProjectInstaller
                             }
                             if (System.IO.File.Exists(ucpSettingsFile))
                             {
-                                string[] lines = System.IO.File.ReadAllLines(ucpSettingsFile);
-                                for (var s = 0; s < lines.Length; s += 1)
-                                {
-                                    if (!string.IsNullOrEmpty(lines[s]))
-                                    {
-                                        string lineLow = lines[s].ToLower();
-                                        if (!lineLow.StartsWith("theme ") && !lineLow.StartsWith("theme\t") && !lineLow.StartsWith("theme="))
-                                        {
-                                            settingsText += lines[s];
-                                            settingsText += "\r\n";
-                                        }
-                                    }
-                                }
+                                // REMOVED FOR FM 25
+                                //string[] lines = System.IO.File.ReadAllLines(ucpSettingsFile);
+                                //for (var s = 0; s < lines.Length; s += 1)
+                                //{
+                                //    if (!string.IsNullOrEmpty(lines[s]))
+                                //    {
+                                //        string lineLow = lines[s].ToLower();
+                                //        if (!lineLow.StartsWith("theme ") && !lineLow.StartsWith("theme\t") && !lineLow.StartsWith("theme="))
+                                //        {
+                                //            settingsText += lines[s];
+                                //            settingsText += "\r\n";
+                                //        }
+                                //    }
+                                //}
                                 RemoveReadOnly(ucpSettingsFile);
                                 System.IO.File.Delete(ucpSettingsFile);
                             }
