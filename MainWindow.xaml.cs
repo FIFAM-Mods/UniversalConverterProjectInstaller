@@ -1449,7 +1449,7 @@ namespace UniversalConverterProjectInstaller
                     {
                         object shDesktop = (object)"Desktop";
                         WshShell shell = new WshShell();
-                        string yearStr = String.Format("20{0}", installXml.version);
+                        string yearStr = String.Format("{0}", installXml.version);
                         string managerAddress = (string)shell.SpecialFolders.Item(ref shDesktop) + "\\FIFA Manager " + yearStr + ".lnk";
                         IWshShortcut managerShortcut = (IWshShortcut)shell.CreateShortcut(managerAddress);
                         if (lang == "ger" || lang == "deu")
