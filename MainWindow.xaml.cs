@@ -123,6 +123,7 @@ namespace UniversalConverterProjectInstaller
         int mCurrentInstallFileIndex = 0;
         string mTargetFolder;
         string lang;
+        string region;
         bool initialized = false;
         string mCulture;
         int mGameLanguage;
@@ -488,6 +489,7 @@ namespace UniversalConverterProjectInstaller
             BtnUpdate.Click += ConfigUpdateSizes;
             BtnCleanup.Click += CleanUp;
             lang = Thread.CurrentThread.CurrentUICulture.ThreeLetterISOLanguageName.ToLower();
+            region = "";
             if (mCulture == "de-DE")
             {
                 FmVersionEng.Visibility = Visibility.Hidden;
@@ -704,6 +706,16 @@ namespace UniversalConverterProjectInstaller
                 }
             }
             return -1;
+        }
+
+        private string GetIniValue(string section, string key, string defaultValue, string iniPath)
+        {
+            StringBuilder sb = new StringBuilder(255);
+            GetPrivateProfileString(section, key, defaultValue, sb, 255, iniPath);
+            string result = sb.ToString();
+            if (string.IsNullOrEmpty(result))
+                result = defaultValue;
+            return result.ToLower();
         }
 
         private void UpdateInstallSizes()
@@ -1039,51 +1051,61 @@ namespace UniversalConverterProjectInstaller
                     string localeSrcFile = System.IO.Path.Combine(TbInstallDir.Text, "locale.ini");
                     if (System.IO.File.Exists(localeSrcFile))
                     {
-                        StringBuilder sb = new StringBuilder(256);
-                        GetPrivateProfileString("OPTIONS", "TEXT_LANGUAGE", lang, sb, sb.Capacity, localeSrcFile);
-                        lang = sb.ToString();
+                        lang = GetIniValue("OPTIONS", "TEXT_LANGUAGE", lang, localeSrcFile);
+                        region = GetIniValue("OPTIONS", "LANGUAGE_REGION", "", localeSrcFile);
                     }
                     CbThemeFinal.SelectedIndex = -1;
                     CbThemeFinal.IsEnabled = false;
                 }
                 int targetLanguage = 2;
                 if (lang == "eng")
-                    targetLanguage = 2;
+                {
+                    if (region == "uk")
+                    {
+                        targetLanguage = 3;
+                    }
+                    else if (region == "us")
+                    {
+                        targetLanguage = 4;
+                    }
+                    else
+                    {
+                        targetLanguage = 2;
+                    }
+                }
                 else if (lang == "ger" || lang == "deu")
                     targetLanguage = 1;
                 else if (lang == "fre" || lang == "fra")
-                    targetLanguage = 4;
+                    targetLanguage = 6;
                 else if (lang == "ita")
-                    targetLanguage = 5;
-                else if (lang == "spa")
-                    targetLanguage = 3;
-                else if (lang == "pol")
                     targetLanguage = 7;
+                else if (lang == "spa")
+                    targetLanguage = 5;
+                else if (lang == "pol")
+                    targetLanguage = 9;
                 else if (lang == "rus")
                 {
                     if (CbInstallType.SelectedIndex == 0 && (mCulture == "uk" || mCulture == "uk-UA"))
                     {
-                        targetLanguage = 11;
+                        targetLanguage = 13;
                     }
                     else
-                        targetLanguage = 10;
+                        targetLanguage = 12;
                 }
-                else if (lang == "bel" || lang == "kaz" || lang == "aze")
-                    targetLanguage = 10;
                 else if (lang == "ukr")
-                    targetLanguage = 11;
+                    targetLanguage = 13;
                 else if (lang == "por")
-                    targetLanguage = 8;
+                    targetLanguage = 10;
                 else if (lang == "cze" || lang == "ces")
                     targetLanguage = 0;
                 else if (lang == "tur")
-                    targetLanguage = 9;
+                    targetLanguage = 11;
                 else if (lang == "hun")
-                    targetLanguage = 6;
+                    targetLanguage = 8;
                 else if (lang == "chi" || lang == "zho")
-                    targetLanguage = 13;
+                    targetLanguage = 15;
                 else if (lang == "kor")
-                    targetLanguage = 12;
+                    targetLanguage = 14;
                 CbGameLanguage.SelectedIndex = targetLanguage;
                 UpdateInstallSizes();
             }
@@ -1335,34 +1357,54 @@ namespace UniversalConverterProjectInstaller
                         {
                             int gameLanguage = mGameLanguage;
                             string targetLang = "eng";
+                            string targetRegion = "";
+                            string targetCurrency = "EUR";
+                            string targetUnits = "Metric";
                             if (gameLanguage == 2)
                                 targetLang = "eng";
+                            else if (gameLanguage == 3)
+                            {
+                                targetLang = "eng";
+                                targetCurrency = "GBP";
+                            }
+                            else if (gameLanguage == 4)
+                            {
+                                targetLang = "eng";
+                                targetCurrency = "USD";
+                                targetUnits = "Imperial";
+                            }
                             else if (gameLanguage == 1)
                                 targetLang = "ger";
-                            else if (gameLanguage == 4)
+                            else if (gameLanguage == 6)
                                 targetLang = "fre";
-                            else if (gameLanguage == 5)
-                                targetLang = "ita";
-                            else if (gameLanguage == 3)
-                                targetLang = "spa";
                             else if (gameLanguage == 7)
+                                targetLang = "ita";
+                            else if (gameLanguage == 5)
+                                targetLang = "spa";
+                            else if (gameLanguage == 9)
                                 targetLang = "pol";
-                            else if (gameLanguage == 10)
+                            else if (gameLanguage == 12)
                                 targetLang = "rus";
-                            else if (gameLanguage == 11)
+                            else if (gameLanguage == 13)
                                 targetLang = "ukr";
-                            else if (gameLanguage == 8)
+                            else if (gameLanguage == 10)
                                 targetLang = "por";
                             else if (gameLanguage == 0)
                                 targetLang = "cze";
-                            else if (gameLanguage == 9)
+                            else if (gameLanguage == 11)
                                 targetLang = "tur";
-                            else if (gameLanguage == 6)
+                            else if (gameLanguage == 8)
                                 targetLang = "hun";
-                            else if (gameLanguage == 13)
+                            else if (gameLanguage == 15)
+                            {
                                 targetLang = "chi";
-                            else if (gameLanguage == 12)
+                                targetCurrency = "USD";
+                            }
+                            else if (gameLanguage == 14)
+                            {
                                 targetLang = "kor";
+                                targetCurrency = "USD";
+                            }
 
                             StringBuilder sb = new StringBuilder(256);
                             GetPrivateProfileString("OPTIONS", "TEXT_LANGUAGE", "", sb, sb.Capacity, localeDstFile);
@@ -1373,6 +1415,9 @@ namespace UniversalConverterProjectInstaller
                             if (targetLang != currLang)
                             {
                                 WritePrivateProfileString("OPTIONS", "TEXT_LANGUAGE", targetLang, localeDstFile);
+                                WritePrivateProfileString("OPTIONS", "LANGUAGE_REGION", targetRegion, localeDstFile);
+                                WritePrivateProfileString("OPTIONS", "LANGUAGE_CURRENCY", targetCurrency, localeDstFile);
+                                WritePrivateProfileString("OPTIONS", "LANGUAGE_UNITS", targetUnits, localeDstFile);
 
                                 List<string> availableLangs = new List<string>(new string[] { "brp", "dan", "dut", "eng", "fre", "ger", "gre",
                                 "ita", "kor", "nor", "pol", "por", "spa", "swe" });

@@ -304,7 +304,23 @@
                                     <Border BorderThickness="1" Margin="0,0,5,0" BorderBrush="#FFB0B0B0" HorizontalAlignment="Left" VerticalAlignment="Center">
                                         <Image Source="flags/eng.png" Width="24" Stretch="UniformToFill"/>
                                     </Border>
-                                    <TextBlock Text="English"/>
+                                    <TextBlock Text="English (International)"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderThickness="1" Margin="0,0,5,0" BorderBrush="#FFB0B0B0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <Image Source="flags/eng_uk.png" Width="24" Stretch="UniformToFill"/>
+                                    </Border>
+                                    <TextBlock Text="English (UK)"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            <ComboBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderThickness="1" Margin="0,0,5,0" BorderBrush="#FFB0B0B0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <Image Source="flags/eng_us.png" Width="24" Stretch="UniformToFill"/>
+                                    </Border>
+                                    <TextBlock Text="English (US)"/>
                                 </StackPanel>
                             </ComboBoxItem>
                             <ComboBoxItem>

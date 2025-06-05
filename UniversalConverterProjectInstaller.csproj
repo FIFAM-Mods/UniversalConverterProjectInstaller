@@ -231,5 +231,9 @@
   <ItemGroup>
     <Resource Include="theme_3.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="flags\eng_uk.png" />
+    <Resource Include="flags\eng_us.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
