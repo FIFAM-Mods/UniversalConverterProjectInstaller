@@ -1,18 +1,18 @@
-﻿<installer version="2025" update="0">
+﻿<installer version="2025" update="1">
     <requirements>
-	    <file name="installer_files/tools/gen_big_idx.exe" />
-	</requirements>
+        <file name="installer_files/tools/gen_big_idx.exe" />
+    </requirements>
     <variables>
-	    <variable name="numPortraits1" value="243'000" />
-		<variable name="numPortraits2" value="71'000" />
-		<variable name="numBadges1" value="14'451" />
-		<variable name="numBadges2" value="14'451" />
-		<variable name="numStadiums1" value="123" />
-		<variable name="numStadiums2" value="1'216" />
-	</variables>
-	<group name="Start" update="99">
+        <variable name="numPortraits1" value="223'000" />
+        <variable name="numPortraits2" value="65'000" />
+        <variable name="numBadges1" value="14'451" />
+        <variable name="numBadges2" value="14'451" />
+        <variable name="numStadiums1" value="123" />
+        <variable name="numStadiums2" value="1'216" />
+    </variables>
+    <group name="Start" update="99">
         <action type="RemoveFile" path="big.idx" message="Removing BIG index" />
-	</group>
+    </group>
     <group name="Main" update="0">
         <action type="RemoveFile" path="winmm.dll" message="Removing previous ASI Loader versions" />
         <action type="RemoveFile" path="version.dll" message="Removing previous ASI Loader versions" />
@@ -23,18 +23,18 @@
         <action type="RemoveFolder" path="art" message="Removing art folder" />
         <action type="RemoveFolder" path="art_fm" message="Removing art_fm folder" />
         <action type="RemoveFolder" path="badges" message="Removing badges folder" />
-		<action type="RemoveFolder" path="cities" message="Removing cities folder" />
-		<action type="RemoveFolder" path="custom_pictures" message="Removing custom_pictures folder" />
-		<action type="RemoveFolder" path="dark" message="Removing dark theme folder" />
+        <action type="RemoveFolder" path="cities" message="Removing cities folder" />
+        <action type="RemoveFolder" path="custom_pictures" message="Removing custom_pictures folder" />
+        <action type="RemoveFolder" path="dark" message="Removing dark theme folder" />
         <action type="RemoveFolder" path="portraits/club/160x160" message="Removing portraits folder" />
         <action type="RemoveFolder" path="portraits/Referees/160x160" message="Removing portraits folder" />
         <action type="RemoveFolder" path="portraits/HallOfFame/160x160" message="Removing portraits folder" />
-		<action type="RemoveFolder" path="portraits/club/512x512" message="Removing portraits folder" />
+        <action type="RemoveFolder" path="portraits/club/512x512" message="Removing portraits folder" />
         <action type="RemoveFolder" path="screens" message="Removing screens folder" />
         <action type="RemoveFolder" path="script" message="Removing script folder" />
         <action type="RemoveFolder" path="sponsors" message="Removing sponsors folder" />
-		<action type="RemoveFolder" path="stadiums" message="Removing stadiums folder" />
-		<action type="RemoveFolder" path="trophies" message="Removing trophies folder" />
+        <action type="RemoveFolder" path="stadiums" message="Removing stadiums folder" />
+        <action type="RemoveFolder" path="trophies" message="Removing trophies folder" />
         <action type="RemoveFolder" path="ucp_popups" message="Removing ucp_popups folder" />
         <action type="RemoveFolder" path="plugins" message="Uninstalling plugins" />
         <action type="RemoveFolder" path="database" message="Deleting original database" />
@@ -51,7 +51,6 @@
         <action type="RemoveFolder" path="data/audio/music" message="Removing music" />
         <action type="RemoveFolder" path="data/stadium/FIFA" message="Removing stadiums" />
         <action type="RemoveFolder" path="fmdata/historic" message="Removing history files" />
-        <action type="RemoveFolder" path="data/audio/music" message="Removing music files" />
         <action type="RemoveFolder" path="data/audio/StadiumEntry" message="Removing stadium audio files" />
         <action type="RemoveFolder" path="data/fonts" message="Removing fonts" />
         <action type="RemoveFolder" path="fmdata/popups" message="Removing popups folder" />
@@ -95,15 +94,28 @@
         <action type="UnpackArchive" tag="STADIUMS1" path="installer_files/stadiums_1.ucpar" size="-1" message="Unpacking: stadiums_1.ucpar" />
         <action type="UnpackArchive" tag="STADIUMS2" path="installer_files/stadiums_2.ucpar" size="-1" message="Unpacking: stadiums_2.ucpar" />
     </group>
-	<group name="End" update="99">
+    <group name="Update 1" update="1">
+        <action type="UnpackArchive" tag="GENERAL" path="installer_files/update1.ucpar" size="-1" message="Unpacking: update1.ucpar" />
+        <action type="UnpackArchive" tag="PORTRAITS1" path="installer_files/update1_portraits_1.ucpar" size="-1" message="Unpacking: update1_portraits_1.ucpar" />
+        <action type="UnpackArchive" tag="PORTRAITS2" path="installer_files/update1_portraits_2.ucpar" size="-1" message="Unpacking: update1_portraits_2.ucpar" />
+        <action type="UnpackArchive" tag="BADGES1" path="installer_files/update1_badges_1.ucpar" size="-1" message="Unpacking: update1_badges_1.ucpar" />
+        <action type="UnpackArchive" tag="BADGES2" path="installer_files/update1_badges_2.ucpar" size="-1" message="Unpacking: update1_badges_2.ucpar" />
+        <action type="UnpackArchive" tag="XXL" path="installer_files/update1_portraits_xxl.ucpar" size="-1" message="Unpacking: update1_portraits_xxl.ucpar" />
+        <action type="UnpackArchive" tag="KITS" path="installer_files/update1_kits.ucpar" size="-1" message="Unpacking: update1_kits.ucpar" />
+        <action type="UnpackArchive" tag="FACES" path="installer_files/update1_faces.ucpar" size="-1" message="Unpacking: update1_faces.ucpar" />
+        <action type="UnpackArchive" tag="STADIUMS1" path="installer_files/update1_stadiums_1.ucpar" size="-1" message="Unpacking: update1_stadiums_1.ucpar" />
+        <action type="UnpackArchive" tag="STADIUMS2" path="installer_files/update1_stadiums_2.ucpar" size="-1" message="Unpacking: update1_stadiums_2.ucpar" />
+    </group>
+    <group name="End" update="99">
         <action type="CopyFile" path="fmdata/Restore.dat" to="database/Master.dat" size="50" message="Installing Editor database" />
+        <action type="CopyFile" path="fmdata/Restore.dat" to="fmdata/WM-Master.dat" size="50" message="Installing World Cup database" />
         <action type="LocaleIni" message="Updating locale file" />
-        <action type="UcpIni" message="Updating settings file" />
         <action type="CleanDocumentsGraphics" message="Removing graphics from Documents" />
         <action type="CleanDocumentsSavegames" message="Removing savegames from Documents" />
         <action type="GenerateBigIdx" message="Creating BIG index" />
     </group>
-	<group name="Shortcuts" update="0">
+    <group name="Shortcuts" update="0">
+        <action type="UcpIni" message="Updating settings file" />
         <action type="DesktopShortcuts" message="Creating desktop shortcuts" />
     </group>
 </installer>

@@ -1406,35 +1406,26 @@ namespace UniversalConverterProjectInstaller
                                 targetCurrency = "USD";
                             }
 
-                            StringBuilder sb = new StringBuilder(256);
-                            GetPrivateProfileString("OPTIONS", "TEXT_LANGUAGE", "", sb, sb.Capacity, localeDstFile);
-                            string currLang = sb.ToString();
+                            WritePrivateProfileString("OPTIONS", "TEXT_LANGUAGE", targetLang, localeDstFile);
+                            WritePrivateProfileString("OPTIONS", "LANGUAGE_REGION", targetRegion, localeDstFile);
+                            WritePrivateProfileString("OPTIONS", "LANGUAGE_CURRENCY", targetCurrency, localeDstFile);
+                            WritePrivateProfileString("OPTIONS", "LANGUAGE_UNITS", targetUnits, localeDstFile);
 
-                            //MessageBox.Show(targetLang);
+                            List<string> availableLangs = new List<string>(new string[] { "brp", "dan", "dut", "eng", "fre", "ger", "gre",
+                            "ita", "kor", "nor", "pol", "por", "spa", "swe" });
 
-                            if (targetLang != currLang)
+                            if (availableLangs.Contains(targetLang)
+                                && System.IO.File.Exists(System.IO.Path.Combine(mTargetFolder, "data\\cmn\\fe\\" + targetLang + ".db"))
+                                && System.IO.File.Exists(System.IO.Path.Combine(mTargetFolder, "data\\fi-audio\\dat_" + targetLang + ".big")))
                             {
-                                WritePrivateProfileString("OPTIONS", "TEXT_LANGUAGE", targetLang, localeDstFile);
-                                WritePrivateProfileString("OPTIONS", "LANGUAGE_REGION", targetRegion, localeDstFile);
-                                WritePrivateProfileString("OPTIONS", "LANGUAGE_CURRENCY", targetCurrency, localeDstFile);
-                                WritePrivateProfileString("OPTIONS", "LANGUAGE_UNITS", targetUnits, localeDstFile);
-
-                                List<string> availableLangs = new List<string>(new string[] { "brp", "dan", "dut", "eng", "fre", "ger", "gre",
-                                "ita", "kor", "nor", "pol", "por", "spa", "swe" });
-
-                                if (availableLangs.Contains(targetLang)
-                                    && System.IO.File.Exists(System.IO.Path.Combine(mTargetFolder, "data\\cmn\\fe\\" + targetLang + ".db"))
-                                    && System.IO.File.Exists(System.IO.Path.Combine(mTargetFolder, "data\\fi-audio\\dat_" + targetLang + ".big")))
+                                WritePrivateProfileString("", "TEXT_LANGUAGE_OVERRIDE", targetLang, localeDstFile);
+                            }
+                            if (targetLang == "chi" || targetLang == "kor")
+                            {
+                                string fontsSrc = System.IO.Path.Combine(mTargetFolder, "fmdata\\" + targetLang + "\\fonts.big");
+                                if (System.IO.File.Exists(fontsSrc))
                                 {
-                                    WritePrivateProfileString("", "TEXT_LANGUAGE_OVERRIDE", targetLang, localeDstFile);
-                                }
-                                if (targetLang == "chi" || targetLang == "kor")
-                                {
-                                    string fontsSrc = System.IO.Path.Combine(mTargetFolder, "fmdata\\" + targetLang + "\\fonts.big");
-                                    if (System.IO.File.Exists(fontsSrc))
-                                    {
-                                        System.IO.File.Copy(fontsSrc, System.IO.Path.Combine(mTargetFolder, "fonts.big"), true);
-                                    }
+                                    System.IO.File.Copy(fontsSrc, System.IO.Path.Combine(mTargetFolder, "fonts.big"), true);
                                 }
                             }
                         }
