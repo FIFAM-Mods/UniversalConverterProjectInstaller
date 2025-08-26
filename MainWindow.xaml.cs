@@ -1422,10 +1422,15 @@ namespace UniversalConverterProjectInstaller
                             }
                             if (targetLang == "chi" || targetLang == "kor")
                             {
-                                string fontsSrc = System.IO.Path.Combine(mTargetFolder, "fmdata\\" + targetLang + "\\fonts.big");
-                                if (System.IO.File.Exists(fontsSrc))
+                                string[] fontFiles = { "fonts.big", "fonts.xml", "fontsVirtual1.xml", "fontsVirtual2.xml" };
+                                foreach (string file in fontFiles)
                                 {
-                                    System.IO.File.Copy(fontsSrc, System.IO.Path.Combine(mTargetFolder, "fonts.big"), true);
+                                    string src = System.IO.Path.Combine(mTargetFolder, "fmdata\\" + targetLang + "\\" + file);
+                                    string dst = System.IO.Path.Combine(mTargetFolder, file);
+                                    if (System.IO.File.Exists(src))
+                                    {
+                                        System.IO.File.Copy(src, dst, true);
+                                    }
                                 }
                             }
                         }
