@@ -671,8 +671,10 @@ namespace UniversalConverterProjectInstaller
                 RemoveFolder(targetFolder + "\\" + "data\\assets");
                 RemoveFolder(targetFolder + "\\" + "data\\audio\\music");
                 RemoveFolder(targetFolder + "\\" + "data\\stadium\\FIFA");
+                RemoveFile(targetFolder + "\\" + "Manager.exe");
                 RemoveFile(targetFolder + "\\" + "Manager13.exe");
                 RemoveFile(targetFolder + "\\" + "Manager14.exe");
+                RemoveFile(targetFolder + "\\" + "EdManager.exe");
                 RemoveFile(targetFolder + "\\" + "EdManager13.exe");
                 RemoveFile(targetFolder + "\\" + "EdManager14.exe");
                 RemoveFile(targetFolder + "\\" + "Manager13.ico");
@@ -681,6 +683,10 @@ namespace UniversalConverterProjectInstaller
                 RemoveFile(targetFolder + "\\" + "fmdata\\Restore.big");
                 RemoveFile(targetFolder + "\\" + "fmdata\\UniversalConverterProjectDatabase.ucpdb");
                 RemoveFile(targetFolder + "\\" + "fmdata\\UniversalConverterProjectDatabase_WC.ucpdb");
+                foreach (var file in Directory.EnumerateFiles(targetFolder, "art_*.big", SearchOption.TopDirectoryOnly))
+                {
+                    RemoveFile(file);
+                }
 
                 if (ChkRemoveGraphics.IsChecked == true || ChkRemoveSavegames.IsChecked == true)
                 {
